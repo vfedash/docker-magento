@@ -25,11 +25,12 @@ services:
       - appdata:/var/www/html
       - sockdata:/sock
       - ssldata:/etc/nginx/certs
-    #extra_hosts: &appextrahosts
+    extra_hosts: &appextrahosts
       ## Selenium support, replace "magento.test" with URL of your site
       #- "magento.test:172.17.0.1"
       ## Linux, uncomment for Xdebug capabilities:
       #- "host.docker.internal:host-gateway"
+      - "host.docker.internal:172.17.0.1"
 
   phpfpm:
     image: markoshust/magento-php:8.2-fpm-0
